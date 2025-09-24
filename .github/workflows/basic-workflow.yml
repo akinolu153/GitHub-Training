@@ -39,8 +39,8 @@ jobs:
            #runs command using runner shell
           - name: send greetings
             run: |
-                echo "Hello ${{github.event.input.name}}
-                echo "Hello ${{github.event.inputs.city}}
-                echo "Hello ${{github.event.input.color}}
+                echo "Hello ${{github.event.input.name}}"
+                echo "Hello ${{github.event.inputs.city}}"
+                echo "Hello ${{github.event.input.color}}"
               
    
