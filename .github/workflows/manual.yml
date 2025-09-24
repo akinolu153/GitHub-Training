@@ -1,0 +1,38 @@
+name: Manual Trigger Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'staging'
+        type: string
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log input values
+        run: |
+          echo "Log Level: ${{ github.event.inputs.logLevel }}"
+          echo "Environment: ${{ github.event.inputs.environment }}"
+
+      - name: Run a script based on environment
+        if: github.event.inputs.environment == 'production'
+        run: echo "Deploying to production!"
+      - name: Run a different script for staging
+        if: github.event.inputs.environment == 'staging'
+        run: echo "Deploying to staging!"
