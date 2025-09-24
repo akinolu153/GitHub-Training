@@ -1,1 +1,52 @@
+# Trying out simpliest github
+# Display name during run
 
+name: Basic Gitworkflow
+
+# Trigger the action/event. Below is for manual run
+on:
+  workflow_default:
+    #Input parameters to run workflow
+    inputs:
+      name:
+        #descrptive name to show on UI
+        description: "Guest to greet"
+        default: "Hello"
+        # Required to run
+        required: true
+        # input type (string, choice, boolean)
+        type: string
+      city:
+        description: "City to shown"
+        required: true
+        default: "Choose City"
+        type: choice
+        options:
+          - New Jersey
+          - Georgia
+          - Washington DC
+       color:
+         description: "Favorite color is blue"
+         required: true
+         type: boolean
+         
+    # a workflow must have one or more jobs that run sequentially
+    jobs:
+      # job name to be displayed in runtime
+      Greeting_job:
+        #display name
+        name: "Greeting, Program"
+
+        # runner agent to run the job
+        runs-on:
+          - ubuntu-latest
+
+         steps:
+           #runs command using runner shell
+           - name: send greetings
+             run: |
+                echo "Hello ${{github.event.input.name}}
+                echo "Hello ${{github.event.inputs.city}}
+                echo "Hello ${{github.event.input.color}}
+              
+   
