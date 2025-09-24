@@ -5,23 +5,24 @@ on:
     inputs:
       name:
         #descrptive name to show on UI
-        description: "Please enter name"
-        #default: "Hello"
+        description: "Please enter your name"
+        #default: "Name"
         # Required to run
         required: true
         # input type (string, choice, boolean)
         type: string
       city:
-        description: "City to shown"
+        description: "Please select your state"
         required: true
-        default: "Choose City"
+        #default: "Choose City"
         type: choice
         options:
           - New Jersey
           - Georgia
           - Washington DC
+          - New York
       color:
-        description: "Favorite color is blue"
+        description: "Is your Favorite color Blue"
         required: true
         type: boolean
         
@@ -40,7 +41,7 @@ jobs:
           - name: send greetings
             run: |
                 echo "Hello ${{github.event.inputs.name}}"
-                echo "Hello ${{github.event.inputs.city}}"
-                echo "Hello ${{github.event.inputs.color}}"
+                echo "Your state of Origin is ${{github.event.inputs.city}}"
+                echo "Favorite Color is Blue? ${{github.event.inputs.color}}"
               
    
