@@ -36,9 +36,11 @@ jobs:
         runs-on:
           - ubuntu-latest
         steps:
+          - name: checkout code
+            uses: action/checkout@v4
            #runs command using runner shell
-           - name: send greetings
-             run: |
+          - name: send greetings
+            run: |
                 echo "Hello ${{github.event.input.name}}
                 echo "Hello ${{github.event.inputs.city}}
                 echo "Hello ${{github.event.input.color}}
