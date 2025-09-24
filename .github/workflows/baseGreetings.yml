@@ -6,7 +6,7 @@ name: Basic Gitworkflow
 
 # Trigger the action/event. Below is for manual run
 on:
-  workflow_default:
+  workflow_dispatch:
     #Input parameters to run workflow
     inputs:
       name:
