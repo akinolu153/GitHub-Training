@@ -1,5 +1,4 @@
 name: Basic Gitworkflow
-
 # Trigger the action/event. Below is for manual run
 on:
   workflow_dispatch:
@@ -22,13 +21,12 @@ on:
           - New Jersey
           - Georgia
           - Washington DC
-       color:
-         description: "Favorite color is blue"
-         required: true
-         type: boolean
-         
-    # a workflow must have one or more jobs that run sequentially
-    jobs:
+      color:
+        description: "Favorite color is blue"
+        required: true
+        type: boolean
+        
+jobs:
       # job name to be displayed in runtime
       Greeting_job:
         #display name
@@ -37,8 +35,7 @@ on:
         # runner agent to run the job
         runs-on:
           - ubuntu-latest
-
-         steps:
+        steps:
            #runs command using runner shell
            - name: send greetings
              run: |
