@@ -1,0 +1,24 @@
+# Controlling chain of jobs
+
+name: Run-Chain-Jobs
+
+on: 
+  workflow_dispatch:
+    inputs:
+      run-job-3:
+        description: "Run Multiple Jobs"
+        required: true
+        type: boolean
+jobs:
+    job-1:
+      name: "Job 1"
+      runs-on: ubuntun-latest
+      steps:
+        - name: Output for Job 1
+          run: echo "Hello from Job 1. Run Job equals $ {{github.event.inputs.run-job-3}}
+          
+        
+      
+    
+        
+    
