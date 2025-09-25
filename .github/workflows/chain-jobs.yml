@@ -15,7 +15,7 @@ jobs:
       runs-on: ubuntun-latest
       steps:
         - name: Output for Job 1
-          run: echo "Hello from Job 1. Run Job equals $ {{github.event.inputs.run-job-3}}
+          run: echo "Hello from Job 1. Run Job name is displayed here" $ {{github.event.inputs.run-job-3}}
           
         
       
