@@ -36,7 +36,7 @@ jobs:
       - job-1
       steps:
         - name: Output for Job3
-          run: echo "Job 3 runs if input in job 1 was TRUE andand job 1 finishes ${{ github.event.input.run-job-3 }}"
+          run: echo "Job 3 runs if input in JOBS 1 was TRUE andand job 1 finishes ${{ github.event.input.run-job-3 }}"
 
 
         
