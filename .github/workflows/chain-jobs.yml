@@ -46,7 +46,7 @@ jobs:
         - job-3
       steps:
         - name: Output for Job4
-          run:  echo "This is running of Job 4"
+          run: echo "This is running of Job 4"
     
 
 
