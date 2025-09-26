@@ -1,0 +1,23 @@
+
+#name of file
+name: Variable and Context
+
+on:
+# event_trigger
+  workflow_dispatch
+    inputs:
+      description: "Retrieving Github context and variable"
+      required: true
+      type: string
+
+# job to execute
+jobs: 
+  job-1:
+    runs-on: ubuntu-latest
+  
+  # actual steps TO CAPTURE GITHUB CONTEXT OBJECT
+  steps:
+    - name: Github variable details
+      env:
+        GITHUB_CONTEXT: ${{ toJSON(github) }}
+      run:  echo  ${{ env.GITHUB_CONTEXT }}
