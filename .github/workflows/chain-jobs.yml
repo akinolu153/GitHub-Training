@@ -5,7 +5,8 @@ name: Run-Chain-Jobs
 on: 
   workflow_dispatch:
     inputs:
-      run-job-3:
+      #run-job-3:
+      name:
         description: "Run Multiple Jobs"
         required: true
         type: boolean
@@ -15,7 +16,7 @@ jobs:
       runs-on: ubuntun-latest
       steps:
         - name: Output for Job 1
-          run: echo "Hello from Job 1. Run Job name is displayed here $ {{github.event.inputs.desprition}}"
+          run: echo "Hello from Job 1. Run Job name is displayed here ${{ github.event.inputs.run-job-3 }}"
           
         
       
