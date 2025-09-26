@@ -20,7 +20,7 @@ jobs:
 
     job-2:
       name: job 2
-      runs-on: unbuntu-latest
+      runs-on: ubuntu-latest
       #condition to trigger - dependency
       needs:
         - job-1
