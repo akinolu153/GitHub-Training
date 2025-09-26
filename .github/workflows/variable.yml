@@ -13,10 +13,9 @@ on:
 # job to execute
 jobs: 
   job-1:
-    runs-on: ubuntu-latest
-  
-  # actual steps TO CAPTURE GITHUB CONTEXT OBJECT
-  steps:
+    runs-on: ubuntu-latest  
+    #job to capture GITHUBcontext objects
+    steps:
     - name: Github variable details
       env:
         GITHUB_CONTEXT: ${{ toJSON(github) }}
