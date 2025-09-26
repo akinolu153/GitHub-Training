@@ -5,9 +5,10 @@ on:
 # event_trigger
   workflow_dispatch:
     inputs:
-      description: "Retrieving Github context and variable"
-      required: true
-      type: string
+      name:
+        description: Retrieving Github context and variable
+        required: true
+        type: string
 
 # job to execute
 jobs: 
