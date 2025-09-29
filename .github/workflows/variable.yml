@@ -19,4 +19,4 @@ jobs:
     - name: Github variable details
       env:
         GITHUB_CONTEXT: ${{ toJSON(github) }}
-      run:  echo  ${{ env.GITHUB_CONTEXT }}
+      run:  echo  $GITHUB_CONTEXT
