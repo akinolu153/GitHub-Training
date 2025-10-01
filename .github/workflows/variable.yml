@@ -53,7 +53,7 @@ jobs:
   job-4:
     runs-on: ubuntu-latest 
     env:
-      VAR 1: my-job4-variable
+      VAR1: my-job4-variable
     needs: job-3
     steps:
     -  run: |
