@@ -49,12 +49,16 @@ jobs:
     steps:
     -  name: Job number 3
        run: echo ${{ needs.job-2.outputs.output1 }} ${{ needs.job-2.outputs.output2 }}
-
+  
   job-4:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
+    env:
+      VAR 1: my-job4-variable
+    needs: job-3
     steps:
-         run: 
-          echo $VAR1 # print VAR1 varible at worflow levelecho ${{ env.VAR1 }} # print VAR1 variable at job level
+    -  run: |
+          echo $VAR1 # print VAR1 varible at worflow level
+          echo ${{ env.VAR1 }} # print VAR1 variable at job level
 
 
 
