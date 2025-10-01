@@ -35,13 +35,13 @@ jobs:
        id: step1  # to be referenced
        run: echo "step1value=Hello" >> $GITHUB_OUTPUT
        
-       name: Step 1b
+    -  name: Step 1b
        id: step1b
        run: echo "step2value=World"  >> $GITHUB_OUTPUT
     
     outputs:
       output1: ${{ steps.step1.outputs.step1value }}
-      output2: ${{ steps.step1b.output.step2value }}
+      output2: ${{ steps.step1b.outputs.step2value }}
   
   job-3:
     runs-on: ubuntu-latest
