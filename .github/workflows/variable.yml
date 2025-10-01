@@ -49,4 +49,19 @@ jobs:
     steps:
     -  name: Job number 3
        run: echo ${{ needs.job-2.outputs.output1 }} ${{ needs.job-2.outputs.output2 }}
-       
+
+  job-4:
+    runs-on: ubuntu-latest
+    env:
+      VAR1: job-4var1 # overriding variable declared at worflow level
+      VAR2: job-4var2
+    needs: job-3
+    steps:
+    - name: Job number 4
+      run: | 
+
+        echo $VAR1 # print VAR1 varible at worflow level
+        echo ${{ env.VAR1 }} # print VAR1 variable at job level
+
+
+
