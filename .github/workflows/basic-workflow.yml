@@ -45,3 +45,4 @@ jobs:
                 echo "Favorite Color is Blue? ${{github.event.inputs.color}}"
               
    
+git branch

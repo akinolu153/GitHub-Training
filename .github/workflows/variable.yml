@@ -3,8 +3,7 @@
 name: Variable and Context
 
 on:
-# event_trigger
-  workflow_dispatch
+  workflow_dispatch:
     inputs:
       description: "Retrieving Github context and variable"
       required: true
