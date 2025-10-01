@@ -53,9 +53,8 @@ jobs:
   job-4:
     runs-on: ubuntu-latest
     steps:
-         run: |
-          echo $VAR1 # print VAR1 varible at worflow level
-          echo ${{ env.VAR1 }} # print VAR1 variable at job level
+         run: 
+          echo $VAR1 # print VAR1 varible at worflow levelecho ${{ env.VAR1 }} # print VAR1 variable at job level
 
 
 
