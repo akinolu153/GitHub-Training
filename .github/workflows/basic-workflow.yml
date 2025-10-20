@@ -1,5 +1,5 @@
 name: Basic Gitworkflow
-run-name: ${{ github.workflow }} || ${{github.event.inputs.environment }}
+run-name: ${{github.workflow}} || ${{github.event.inputs.environment}}
 on:
   workflow_dispatch:
     inputs:
@@ -43,5 +43,9 @@ jobs:
                 echo "Hello ${{github.event.inputs.name}}"
                 echo "Your state of Origin is ${{github.event.inputs.city}}"
                 echo "Favorite Color is Blue? ${{github.event.inputs.color}}"
+                echo "Github filename ${{github.workflow}}"
+                echo "Environment ${{github.event.inputs.environment}}"
+                
+                
               
    
