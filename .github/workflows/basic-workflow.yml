@@ -1,4 +1,5 @@
 name: Basic Gitworkflow
+run-name: ${{ github.workflow }} || ${{github.event.input.environment }}
 
 on:
   workflow_dispatch:
